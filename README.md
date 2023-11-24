@@ -1,2 +1,1 @@
-# rproc_vuart
-OpenAMP remote processor firmware example.
+# OpenAMP Virtual UART Example.
