@@ -1,1 +1,1 @@
-# OpenAMP Virtual UART Example.
+### OpenAMP Virtual UART Example.
