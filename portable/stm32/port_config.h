@@ -10,13 +10,13 @@
 #define RAM_IMAGE       (1)
 #endif
 
-#define SHM_ORIGIN      0x30040000
-#define SHM_LENGTH      32K
+#define SHM_ORIGIN      0x38000000
+#define SHM_LENGTH      64K
 
 // Note to boot from SDRAM use SDRAM bank1 address at 0x70000000 (Not 0xC0000000)
 //#define RAM_ORIGIN      0x70000000
-#define RAM_ORIGIN      0x30020000
-#define RAM_LENGTH      64K
+#define RAM_ORIGIN      0x30000000
+#define RAM_LENGTH      128K
 
 #define ROM_ORIGIN      0x081E0000
 #define ROM_LENGTH      128K
