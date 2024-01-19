@@ -16,7 +16,7 @@
 #define VRING_COUNT             2
 #define VRING_ALIGNMENT         32
 // Note the number of buffers must be a power of 2
-#define VRING_NUM_BUFFS         16
+#define VRING_NUM_BUFFS         64
 
 // The following config should be enough for about 128 descriptors.
 // See lib/include/openamp/virtio_ring.h for the layout of vrings
