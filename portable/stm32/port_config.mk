@@ -29,7 +29,7 @@ CFLAGS += -DMETAL_INTERNAL \
           -DVIRTIO_DEVICE_ONLY \
           -DMETAL_MAX_DEVICE_REGIONS=2 \
           -DRPMSG_BUFFER_SIZE=512 \
-          -DOPENAMP_TRACE_ENABLE=0
+          -DOPENAMP_TRACE_ENABLE=1
 
 CFLAGS += -I. \
           -I$(TOP_DIR)/$(CMSIS_DIR)/include/ \
