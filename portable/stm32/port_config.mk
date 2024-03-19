@@ -3,7 +3,9 @@
 # This work is licensed under the MIT license, see the file LICENSE for details.
 
 FIRMWARE = vuart
-LDSCRIPT ?= stm32xxx
+LDSCRIPT = stm32xxx
+SYSTEM   = src/st/system_stm32h747xx.c
+STARTUP  = src/st/startup_stm32h747xx.s
 STHAL_DIR=$(HAL_DIR)/stm32/h7
 
 # Compiler Flags
@@ -98,6 +100,7 @@ export CFLAGS
 export LDFLAGS
 export TOP_DIR
 export BUILD_DIR
+export SYSTEM
 export STARTUP
 export PORT
 

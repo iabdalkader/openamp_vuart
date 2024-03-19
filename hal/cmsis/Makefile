@@ -4,8 +4,8 @@
 # This work is licensed under the MIT license, see the file LICENSE for details.
 #
 # CMSIS Makefile
-SRC_S = src/st/startup_stm32h747xx.s
-SRC_C = src/st/system_stm32h747xx.c
+SRC_S = $(STARTUP)
+SRC_C = $(SYSTEM)
 
 OBJS  = $(addprefix $(BUILD_DIR)/, $(SRC_S:.s=.o))
 OBJS += $(addprefix $(BUILD_DIR)/, $(SRC_C:.c=.o))
