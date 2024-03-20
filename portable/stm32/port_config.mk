@@ -76,7 +76,7 @@ BUILD_DIRS += $(addprefix $(BUILD_DIR)/, $(sort $(dir $(SRCS))))
 
 # Firmware objects
 FIRM_OBJ += $(addprefix $(BUILD_DIR)/, $(SRCS:.c=.o))
-FIRM_OBJ += $(wildcard $(BUILD_DIR)/$(CMSIS_DIR)/src/st/*.o)
+FIRM_OBJ += $(wildcard $(BUILD_DIR)/$(CMSIS_DIR)/src/stm32/*.o)
 FIRM_OBJ += $(wildcard $(BUILD_DIR)/$(STHAL_DIR)/src/*.o)
 FIRM_OBJ += $(wildcard $(BUILD_DIR)/$(LIBMETAL_DIR)/src/*.o)
 FIRM_OBJ += $(wildcard $(BUILD_DIR)/$(LIBMETAL_DIR)/src/system/generic/*.o)
