@@ -4,8 +4,8 @@
 # This work is licensed under the MIT license, see the file LICENSE for details.
 #
 # CMSIS Makefile
-SRC_S = $(STARTUP)
-SRC_C = $(SYSTEM)
+SRC_S = src/$(PORT)/$(STARTUP).s
+SRC_C = src/$(PORT)/$(SYSTEM).c
 
 OBJS  = $(addprefix $(BUILD_DIR)/, $(SRC_S:.s=.o))
 OBJS += $(addprefix $(BUILD_DIR)/, $(SRC_C:.c=.o))
@@ -22,5 +22,9 @@ $(BUILD_DIR)/%.o : %.c
 $(BUILD_DIR)/%.o : %.s
 	$(ECHO) "AS $<"
 	$(AS) $(AFLAGS) $< -o $@
+
+$(BUILD_DIR)/%.o: %.S
+	$(ECHO) "CC $<"
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 -include $(OBJS:%.o=%.d)

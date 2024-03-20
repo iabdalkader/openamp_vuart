@@ -4,8 +4,8 @@
 
 FIRMWARE = vuart
 LDSCRIPT = stm32xxx
-SYSTEM   = src/st/system_stm32h747xx.c
-STARTUP  = src/st/startup_stm32h747xx.s
+SYSTEM   = system_stm32h747xx
+STARTUP  = startup_stm32h747xx
 STHAL_DIR=$(HAL_DIR)/stm32/h7
 
 # Compiler Flags
@@ -35,7 +35,7 @@ CFLAGS += -DMETAL_INTERNAL \
 
 CFLAGS += -I. \
           -I$(TOP_DIR)/$(CMSIS_DIR)/include/ \
-          -I$(TOP_DIR)/$(CMSIS_DIR)/include/st \
+          -I$(TOP_DIR)/$(CMSIS_DIR)/include/stm32 \
           -I$(TOP_DIR)/$(STHAL_DIR)/include/ \
           -I$(TOP_DIR)/$(STHAL_DIR)/include/Legacy/ \
           -I$(TOP_DIR)/$(OPENAMP_DIR)/ \
