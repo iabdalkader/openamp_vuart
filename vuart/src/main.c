@@ -6,7 +6,6 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include STM32_HAL_H
 
 #include "led.h"
 #include "systick.h"
@@ -57,4 +56,24 @@ int main(void) {
         led_write(LED_BLUE, 1);
         systick_sleep(500);
     }
+}
+
+// To stop nosys warnings.
+void _close(void) {
+
+}
+
+// To stop nosys warnings.
+void _lseek(void) {
+
+}
+
+// To stop nosys warnings.
+void _read(void) {
+
+}
+
+// To stop nosys warnings.
+void _write(void) {
+
 }
