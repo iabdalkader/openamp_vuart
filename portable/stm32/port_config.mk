@@ -54,7 +54,8 @@ LDFLAGS = -mcpu=cortex-m4 \
           -Wl,--gc-sections\
           -Wl,-T$(BUILD_DIR)/$(LDSCRIPT).lds \
           --specs=nosys.specs \
-          -static
+          -static \
+          -Wl,--no-warn-rwx-segment\
 
 # Libraries
 LIBS =
