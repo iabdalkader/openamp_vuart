@@ -40,7 +40,7 @@ int vuart_any(vuart_t *vuart) {
 
 int vuart_read(vuart_t *vuart, uint8_t *data, size_t size) {
     uint32_t i = 0;
-    while (!ringbuf_empty(&vuart->rxbuf)) {
+    while (!ringbuf_empty(&vuart->rxbuf) && size--) {
         data[i++] = ringbuf_get(&vuart->rxbuf);
     }
     return i;

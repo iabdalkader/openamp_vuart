@@ -47,7 +47,7 @@ int openamp_init(void) {
     struct metal_init_params metal_params = METAL_INIT_DEFAULTS;
 
     // The host initializes the shared resource table.
-    openamp_rsc_table_t *rsc_table = METAL_RSC_ADDR;;
+    openamp_rsc_table_t *rsc_table = METAL_RSC_ADDR;
 
     // Initialize libmetal.
     metal_init(&metal_params);

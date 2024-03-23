@@ -47,14 +47,14 @@ int main(void) {
     led_init(LED_BLUE);
     while (1) {
         if (vuart_any(&vuart)) {
-            uint8_t rxbuf[4096];
+            uint8_t rxbuf[RPMSG_BUFFER_SIZE - 32];
             size_t bytes = vuart_read(&vuart, rxbuf, sizeof(rxbuf));
             vuart_write(&vuart, rxbuf, bytes);
         }
         led_write(LED_BLUE, 0);
-        systick_sleep(500);
+        systick_sleep(100);
         led_write(LED_BLUE, 1);
-        systick_sleep(500);
+        systick_sleep(100);
     }
 }
 
