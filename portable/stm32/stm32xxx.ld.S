@@ -1,6 +1,13 @@
+/*
+ * This file is part of the OpenAMP Virtual UART Example.
+ * Copyright (c) 2023 Ibrahim Abdelkader <iabdalkader@openmv.io>
+ * This work is licensed under the MIT license, see the file LICENSE for details.
+ */
+
 #include "port_config.h"
+
 /* Entry Point */
-ENTRY(Reset_Handler)
+ENTRY(g_pfnVectors)
 
 _Min_Heap_Size = 0x2000;
 _Min_Stack_Size = 0x2000;
