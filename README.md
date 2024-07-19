@@ -25,7 +25,10 @@ Set set the address of the second core's memory in `portable/stm32/port_config.h
 #define RAM_ORIGIN      0x70380000
 #define RAM_LENGTH      512K
 ```
-*Note that this step can be skipped for the MicroPython's upstream firmware, since it uses a fixed core memory location.*
+
+Note that this step can be skipped for the MicroPython's upstream firmware, since it uses a fixed core memory location.
+
+Note on STM32 boards, when booting from SDRAM use SDRAM bank1 address at `0x70000000` or `0x60000000` (if banks are swapped) but Never use `0xC0000000`, as by default it's set as Never Execute.
 
 #### Build the firmware
 To build the firmware for STM32 micro-controllers, for example, run the following command:
