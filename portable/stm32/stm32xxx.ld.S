@@ -110,9 +110,9 @@ SECTIONS
   } > REGION_RAM AT> REGION_ROM
 
   /* Uninitialized data section into RAM memory */
-  . = ALIGN(4);
-  .bss :
+  .bss (NOLOAD) :
   {
+    . = ALIGN(4);
     /* This is used by the startup in order to initialize the .bss secion */
     _sbss = .;         /* define a global symbol at bss start */
     __bss_start__ = _sbss;
@@ -126,7 +126,7 @@ SECTIONS
   } > REGION_RAM
 
   /* User_heap_stack section, used to check that there is enough RAM left */
-  ._user_heap_stack :
+  ._user_heap_stack (NOLOAD) :
   {
     . = ALIGN(8);
     PROVIDE ( end = . );

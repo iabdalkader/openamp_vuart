@@ -80,4 +80,28 @@ void SystemInit(void)
     #else
     SCB->VTOR = ROM_ORIGIN;
     #endif
+
+    if (RAM_ORIGIN >= 0x60000000 && RAM_ORIGIN < 0xe0000000) {
+        // Boot from FMC/DRAM
+        HAL_MPU_Disable();
+
+        MPU_Region_InitTypeDef MPU_InitStruct;
+
+        MPU_InitStruct.Number = MPU_REGION_NUMBER0;
+        MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+        MPU_InitStruct.BaseAddress = RAM_ORIGIN;
+        MPU_InitStruct.Size = RAM_MPU_REGION;
+        MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+
+        MPU_InitStruct.IsShareable = MPU_ACCESS_SHAREABLE;
+        MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+        MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
+        MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
+        MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+        MPU_InitStruct.SubRegionDisable = 0x00;
+        HAL_MPU_ConfigRegion(&MPU_InitStruct);
+
+        // Enable the MPU.
+        HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+    }
 }
