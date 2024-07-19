@@ -37,7 +37,7 @@ In this example, the Open-AMP shared memory region is placed at `0x30030000` and
 #define RAM_MPU_REGION  MPU_REGION_SIZE_512KB
 ```
 
-Note that on the STM32, when booting from SDRAM, the alias `0x70000000` (or `0x60000000` if the banks are swapped) should be used, but never `0xC0000000` or `0xD0000000`, as those addresses are by default set as **Never Execute**.
+*Note that on the STM32, when booting from SDRAM, the alias `0x70000000` (or `0x60000000` if the banks are swapped) should be used, but never `0xC0000000` or `0xD0000000`, as those addresses are by default set as **Never Execute**.*
 
 #### Build the firmware
 To build the firmware for STM32 micro-controllers, for example, run the following command:
