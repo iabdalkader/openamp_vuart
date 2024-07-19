@@ -2,7 +2,7 @@
 
 This demo firmware is meant to run on a secondary core, such as the M4, on dual-core micro-controllers. It's provided for testing and verifying the Open-AMP implementation on MicroPython. The firmware opens a channel called "vuart-channel" and echoes back the data sent to it.
 
-### Configuring and Building the Firmware
+### Configuring and building the firmware
 
 Note that this firmware needs to be built from source every time the main firmware changes, especially if OpenMV's firmware used. This is because the address of the reserved memory used by the second core, and to which its firmware is loaded, can change across firmware releases.
 
@@ -47,6 +47,6 @@ make -j$(nproc) PORT=stm32
 ```
 *Note that you need the ARM GNU toolchain (13 or higher) installed somewhere in the path.*
 
-#### Deploy the firmware
+### Deploying the firmware
 
 If the firmware is a RAM-based image, copy the `elf` file to the filesystem storage and run the example scripts. If the image is a flash-based image, the `bin` file needs to be written to the flash, at its base address, using `JTAG` or `dfu-util`.
